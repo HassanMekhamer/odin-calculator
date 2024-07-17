@@ -54,6 +54,7 @@ button {
     justify-content: center;
     font-size: 40px;
     border-radius: 6px;
+    cursor: pointer;
 }
 
 #zero {

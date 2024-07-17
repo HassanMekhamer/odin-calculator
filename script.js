@@ -24,13 +24,17 @@ function operate(a, b, operation) {
 // Function to populate the display
 allButtons.forEach((btn) => {
     btn.addEventListener("click", (e) => {
-        
+
         //// listeners for numbers and the decimal button
         if (e.target.classList == "num") {
             firstOperand = firstOperand.toString()
             secondOperand = secondOperand.toString()
             if (e.target.textContent == ".") {
-                if (!operator && !firstOperand.toString().includes(".")) {
+                if (firstOperand && !operator && !firstOperand.toString().includes(".")) {
+                    firstOperand += e.target.value;
+                    console.log("first =" + firstOperand)
+                    display.textContent += e.target.value
+                } else if (!operator && !firstOperand.toString().includes(".")) {
                     display.textContent = "";
                     firstOperand += e.target.value;
                     console.log("first =" + firstOperand)
